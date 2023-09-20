@@ -25,3 +25,24 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## App Design Map:
+Cat 1 :
+* Componnents 
+- All products.component (Home Page)
+- product Details (single product)
+* Services 
+- products.service(call products API)
+Cat 2 :
+* Componnents
+- Cart
+* Services
+cart.service
+Cat 3 :
+Auth
+* Componnents
+- Register
+- login
+- logout
+*Services 
+- Auth.service 
