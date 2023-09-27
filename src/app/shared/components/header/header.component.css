@@ -1,32 +1,22 @@
-.cart-icon {
-  position: relative;
-  display: inline-block;
+.header{
+  background-image: url('src/assets/wallpaperflare.com_wallpaper_4.jpg');
+  height: 60rem;
+}
+/* .carousel-item img {
+  max-width: 80%;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 8px;
+} */
+
+/* Limit the width of the carousel container */
+.carousel {
+  max-width: 1200px;
+  top:520px;
+  margin: 0 auto;
 }
 
-.item-count {
-  position: absolute;
-  top: -5px;
-  right: -5px;
-  background-color: red;
-  color: white;
-  padding: 1px;
-  border-radius: 50%;
-  padding: 4px 6px;
-  font-size: 12px;
-}
-nav i{
-  font-size: 24px;
-  font-weight: 600;
-}
-nav .main-links{
-  font-size: 20px;
-  font-weight: 600;
-}
-nav img{
-  width: 200px;
-  height: auto;
-}
-.navbar-expand-lg .navbar-nav .dropdown-menu {
-  position: absolute;
-  left: -117px;
+.custom-image-class {
+  height: 250px; /* Set a fixed height for the card to maintain consistency */
+  width: 100%; /* Optional, adjust as per your layout requirements */
 }

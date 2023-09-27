@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ProductsService } from '../../services/products.service';
+import { SharedService } from 'src/app/shared/services/shared.service';
+
 
 
 @Component({
@@ -8,7 +10,7 @@ import { ProductsService } from '../../services/products.service';
   styleUrls: ['./all-products.component.css']
 })
 export class AllProductsComponent {
-  constructor(private _ProductsService:ProductsService){}
+  constructor(private _ProductsService:ProductsService,private _SharedService:SharedService){}
   allProducts:any =[];
   ngOnInit(){
 
@@ -16,6 +18,7 @@ export class AllProductsComponent {
       (data)=>{
         this.allProducts = data;
         console.log(JSON.stringify(data))
+        this._SharedService.sharedData = data;
       },
       (err)=>{
         console.log(err)

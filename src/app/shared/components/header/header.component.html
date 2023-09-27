@@ -1,45 +1,58 @@
-<nav class="navbar navbar-expand-lg" style="background-color: #FFF;">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"><img src="assets/3.png"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarScroll">
-      <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll main-links" style="--bs-scroll-height: 100px;">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="home">Trending</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Eye Glasses</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Sun Glasses</a>
-        </li>
-      </ul>
-      <ul class="navbar-nav d-flex justify-content-center">
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn" type="submit" ><i class="fa-solid fa-magnifying-glass"></i></button>
-        </form>
-
-        <li class="nav-item">
-          <a class="nav-link cart-icon" href="#login"><i class="fa-solid fa-cart-shopping"></i> <span class="item-count">5</span></a>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="fa-solid fa-user"></i>
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Login</a></li>
-            <li><a class="dropdown-item" href="#">View Profile</a></li>
-            <li><a class="dropdown-item" href="#">Logout</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Settings</a></li>
-          </ul>
-        </li>
-      </ul>
+<div class="header">
+  <app-navbar></app-navbar>
+  <header class="vh-100 mb-4 ">
+    <!-- <div id="carouselId" class="carousel slide " data-bs-ride="carousel">
+      <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active">
+          <div class="row">
+            <div class="col-md-2" *ngFor="let product of products.slice(0,6)">
+              <img [src]="product.image" class="w-100" alt="image">
+            </div>
+          </div>
+        </div>
+          <div class="carousel-item ">
+            <div class="row">
+              <div class="col-md-2" *ngFor="let product of products">
+                <img [src]="product.image" [ngClass]="{'img-fluid': true, 'custom-image-class': true}" class="w-100" alt="image">
+              </div>
+            </div>
+          </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div> -->
+    <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active">
+          <div class="row">
+            <div class="col-md-2" *ngFor="let product of products.slice(0, 6)">
+              <img [src]="product.image" [ngClass]="{'img-fluid': true, 'custom-image-class': true}" class="w-100" alt="image">
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row">
+            <div class="col-md-2" *ngFor="let product of products.slice(6, 12)">
+              <img [src]="product.image" [ngClass]="{'img-fluid': true, 'custom-image-class': true}" class="w-100" alt="image">
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-  </div>
-</nav>
+  </header>
 
+</div>
