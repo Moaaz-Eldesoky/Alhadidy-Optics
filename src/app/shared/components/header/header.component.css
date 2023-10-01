@@ -1,5 +1,6 @@
 .header{
-  background-image: url('src/assets/wallpaperflare.com_wallpaper_4.jpg');
+  background-image: url('src/assets/header/henri-pham-u6JG0eYjcEU-unsplash.jpg');
+  background-size: cover;
   height: 60rem;
 }
 /* .carousel-item img {
@@ -12,7 +13,7 @@
 /* Limit the width of the carousel container */
 .carousel {
   max-width: 1200px;
-  top:520px;
+  top:680px;
   margin: 0 auto;
 }
 

@@ -1,1 +1,50 @@
-<p>product-details works!</p>
+<section class="productCard">
+  <div class="container">
+    <a [routerLink]="'/home'" class=""><i class="fa-solid fa-arrow-left mb-5 "></i></a>
+    <div class="info">
+      <h3 class="name">{{productDetails.title}}</h3>
+      <h1 class="slogan">Elegance with comfort</h1>
+      <p class="price">{{productDetails.price}} EG</p>
+      <div class="attribs">
+        <div class="attrib size">
+          <p class="header">Select Size</p>
+          <div class="options">
+            <div class="option">6</div>
+            <div class="option">7</div>
+            <div class="option">8</div>
+            <div class="option">9</div>
+            <div class="option">10</div>
+            <div class="option">11</div>
+          </div>
+        </div>
+        <div class="attrib color">
+          <p class="header">Select Color</p>
+          <div class="options">
+            <div class="option" style="color: #60aec1;"></div>
+            <div class="option" style="color: #ef525e;"></div>
+            <div class="option" style="color: #000000;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="buttons">
+        <div class="button">Add to cart</div>
+        <div class="button colored">Buy now</div>
+      </div>
+    </div>
+    <div class="colorLayer"></div>
+    <div class="preview">
+      <h1 class="brand">Fila</h1>
+      <div class="imgs">
+        <img class="activ" [src]="productDetails.image" alt="img 1">
+        <img src="https://firebasestorage.googleapis.com/v0/b/fotos-3cba1.appspot.com/o/tenis%2Ffila%2Ft3.png?alt=media&token=b2352ce3-be90-411d-b112-cfc6453760a0" alt="img 2">
+        <img src="https://firebasestorage.googleapis.com/v0/b/fotos-3cba1.appspot.com/o/tenis%2Ffila%2Ft1.png?alt=media&token=9b161cad-8068-418e-a0d3-ee2e0975e6f4" alt="img 3">
+      </div>
+      <div class="zoomControl"></div>
+      <div class="closePreview"><i class="fa-solid fa-xmark"></i></div>
+      <div class="movControls">
+        <!-- <div class="movControl left"><i class="fa-regular fa-circle-left"></i></div> -->
+        <div class="movControl right"><i class="fa-regular fa-circle-right"></i></div>
+      </div>
+    </div>
+  </div>
+</section>

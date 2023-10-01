@@ -1,8 +1,10 @@
+<app-header></app-header>
+
 <div class="container mt-5">
-  <div class="all-products">
-    <div class="row">
+  <div class="all-products" *ngIf="!spinner">
+    <div class="row " >
       <div *ngFor="let product of allProducts" class="col-3 mb-3">
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 18rem;" [routerLink]="['/product-details',product.id]" >
           <img [src]="product.image" [ngClass]="{'img-fluid': true, 'custom-image-class': true}" class="card-img-top" alt="...">
           <div class="card-body ">
             <h5 class="card-title">{{product.title| truncateDescription:18}}</h5>
@@ -13,6 +15,9 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="spinner-section" *ngIf="spinner">
+    <app-spinner></app-spinner>
   </div>
 </div>
 

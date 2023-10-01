@@ -6,9 +6,12 @@ import {HttpClient} from '@angular/common/http'
   providedIn: 'root'
 })
 export class ProductsService {
-
+  url:string= 'https://fakestoreapi.com/products'
   constructor(private _HttpClient:HttpClient) { }
   getAllProducts(){
-    return this._HttpClient.get<any>('https://fakestoreapi.com/products')
+    return this._HttpClient.get<any>(this.url)
+  }
+  getProductDetails(id:any){
+    return this._HttpClient.get(`${this.url}/${id}`)
   }
 }

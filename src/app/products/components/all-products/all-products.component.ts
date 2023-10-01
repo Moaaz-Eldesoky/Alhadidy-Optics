@@ -12,16 +12,20 @@ import { SharedService } from 'src/app/shared/services/shared.service';
 export class AllProductsComponent {
   constructor(private _ProductsService:ProductsService,private _SharedService:SharedService){}
   allProducts:any =[];
+  spinner:boolean = true;
   ngOnInit(){
 
     this._ProductsService.getAllProducts().subscribe(
       (data)=>{
+        this.spinner = true;
         this.allProducts = data;
+        this.spinner=false
         console.log(JSON.stringify(data))
         this._SharedService.sharedData = data;
       },
       (err)=>{
-        console.log(err)
+        this.spinner=false;
+
       }
 
     )

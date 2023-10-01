@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProductsService } from '../products/services/products.service';
+import { RouterModule } from '@angular/router';
+import { SpinnerComponent } from './components/spinner/spinner.component';
+
 
 
 
@@ -11,13 +14,17 @@ import { ProductsService } from '../products/services/products.service';
   providers:[ProductsService],
   declarations: [
     HeaderComponent,
-    NavbarComponent
+    NavbarComponent,
+    SpinnerComponent
   ],
   imports: [
     CommonModule,
+    RouterModule
   ],
   exports:[
-    HeaderComponent
+    HeaderComponent,
+    SpinnerComponent,
+    NavbarComponent
   ]
 })
 export class SharedModule { }
