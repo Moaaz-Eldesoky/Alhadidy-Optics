@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProductsService } from '../../services/products.service';
 
 @Component({
   selector: 'app-sun-glasses',
@@ -6,5 +7,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./sun-glasses.component.css']
 })
 export class SunGlassesComponent {
+  constructor(private _ProductsService:ProductsService){}
+  catProducts:any =[];
+  spinner:boolean = true;
+  ngOnInit(){
 
+    this._ProductsService.getCatProducts("men's clothing").subscribe(
+      (data)=>{
+        this.spinner = true;
+        this.catProducts = data;
+        this.spinner=false
+        console.log("sunGlasses"+JSON.stringify(data))
+      },
+      (err)=>{
+        this.spinner=false;
+
+      }
+
+    )
+  }
 }

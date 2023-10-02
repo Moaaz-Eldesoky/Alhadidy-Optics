@@ -14,4 +14,7 @@ export class ProductsService {
   getProductDetails(id:any){
     return this._HttpClient.get(`${this.url}/${id}`)
   }
+  getCatProducts(catName:any){
+    return this._HttpClient.get(`${this.url}/category/${catName}`)
+  }
 }

@@ -5,6 +5,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProductsService } from '../products/services/products.service';
 import { RouterModule } from '@angular/router';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
@@ -15,7 +16,8 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
   declarations: [
     HeaderComponent,
     NavbarComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,8 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
   exports:[
     HeaderComponent,
     SpinnerComponent,
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent
   ]
 })
 export class SharedModule { }

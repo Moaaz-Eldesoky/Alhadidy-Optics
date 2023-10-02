@@ -1,7 +1,7 @@
 .header{
-  background-image: url('src/assets/header/henri-pham-u6JG0eYjcEU-unsplash.jpg');
+  background-image: url('src/assets/header/wallpaperflare.com_wallpaper_2.jpg');
   background-size: cover;
-  height: 60rem;
+  height: 45rem;
 }
 /* .carousel-item img {
   max-width: 80%;
@@ -13,11 +13,12 @@
 /* Limit the width of the carousel container */
 .carousel {
   max-width: 1200px;
-  top:680px;
+  top:400px;
   margin: 0 auto;
 }
 
 .custom-image-class {
   height: 250px; /* Set a fixed height for the card to maintain consistency */
   width: 100%; /* Optional, adjust as per your layout requirements */
+  border-radius: 10px;
 }

@@ -1,0 +1,4 @@
+.custom-image-class {
+  height: 300px; /* Set a fixed height for the card to maintain consistency */
+  width: 100%; /* Optional, adjust as per your layout requirements */
+}

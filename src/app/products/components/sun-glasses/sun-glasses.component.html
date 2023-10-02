@@ -1,1 +1,23 @@
-<p>sun-glasses works!</p>
+<app-header></app-header>
+
+<div class="container mt-5">
+  <div class="all-products" *ngIf="!spinner">
+    <div class="row " >
+      <div *ngFor="let product of catProducts" class="col-3 mb-3">
+        <div class="card" style="width: 18rem;" [routerLink]="['/product-details',product.id]" >
+          <img [src]="product.image" [ngClass]="{'img-fluid': true, 'custom-image-class': true}" class="card-img-top" alt="...">
+          <div class="card-body ">
+            <h5 class="card-title">{{product.title| truncateDescription:18}}</h5>
+            <p class="card-text">{{product.description| truncateDescription:90}}</p>
+            <a href="#" class="btn btn-primary ">Go somewhere</a>
+            <a class="btn btn-secondary ms-3" *ngIf="product.description.length > 100">Read More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="spinner-section" *ngIf="spinner">
+    <app-spinner></app-spinner>
+  </div>
+</div>
+

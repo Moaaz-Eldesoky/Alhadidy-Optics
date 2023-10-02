@@ -9,7 +9,7 @@
           <div class="card-body ">
             <h5 class="card-title">{{product.title| truncateDescription:18}}</h5>
             <p class="card-text">{{product.description| truncateDescription:90}}</p>
-            <a href="#" class="btn btn-primary ">Go somewhere</a>
+            <a class="btn btn-primary" (click)="addToCart(product)">Add To Cart</a>
             <a class="btn btn-secondary ms-3" *ngIf="product.description.length > 100">Read More</a>
           </div>
         </div>
