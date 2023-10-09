@@ -7,3 +7,56 @@
   height: 300px; /* Set a fixed height for the card to maintain consistency */
   width: 100%; /* Optional, adjust as per your layout requirements */
 }
+.buttons{
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+span {
+  position: absolute;
+
+	color: red;
+	/* float: right; */
+	right: 10px;
+}
+.read-more{
+  color: #FFF;
+  text-decoration: none;
+  cursor: pointer;
+}
+.card{
+  background-color: #000;
+  color:#FFF
+}
+.buttons{
+  display: flex;
+  justify-content: space-between;
+}
+.buttons a{
+  display: flex;
+}
+.quantity{
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 10px 10px;
+  width: 50%;
+
+}
+.minus, .plus {
+  display: inline-block;
+  width: 30px;
+  height: 25px;
+  background-color: #EA6A9E;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+
+}
+.num{
+}
+.num input{
+  width: 30px;
+  height: 25px;
+  padding-left:4px;
+}
+
+

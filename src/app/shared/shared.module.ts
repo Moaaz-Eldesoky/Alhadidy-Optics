@@ -9,7 +9,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { BrowserModule } from '@angular/platform-browser';
 import { CarouselModule } from 'ngx-owl-carousel-o';
-
+import { SharedService } from './services/shared.service';
 
 
 
@@ -19,20 +19,22 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     HeaderComponent,
     NavbarComponent,
     SpinnerComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
     BrowserModule,
     CarouselModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+
   ],
   exports:[
     HeaderComponent,
     SpinnerComponent,
     NavbarComponent,
     FooterComponent
+
   ]
 })
 export class SharedModule { }

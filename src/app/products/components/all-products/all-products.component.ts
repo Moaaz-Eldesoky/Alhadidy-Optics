@@ -13,16 +13,22 @@ export class AllProductsComponent {
   constructor(private _ProductsService:ProductsService,private _SharedService:SharedService){}
   allProducts:any =[];
   spinner:boolean = true;
-  cartProducts:any=[];
+  cartProducts:any[]=[];
+  quantity:any = 1
   ngOnInit(){
-
+    if("cart" in localStorage){
+      this.cartProducts = JSON.parse(localStorage.getItem("cart")!)
+    }
+    this._SharedService.setSharedData(this.cartProducts)          //send data to navbar cartIcon
     this._ProductsService.getAllProducts().subscribe(
       (data)=>{
         this.spinner = true;
         this.allProducts = data;
+        this.allProducts.forEach((product:any) => {
+          product.quantity=0;
+        });
         this.spinner=false
-        // console.log(JSON.stringify(data))
-        this._SharedService.sharedData = data;
+
       },
       (err)=>{
         this.spinner=false;
@@ -30,14 +36,50 @@ export class AllProductsComponent {
       }
 
     )
+
   }
+
   addToCart(productData:any){
-    console.log(productData);
     if("cart" in localStorage){
       this.cartProducts = JSON.parse(localStorage.getItem("cart")!)
-      this.cartProducts.push(productData);
+      console.log("cartProducts value is :" + JSON.stringify(this.cartProducts))
+      let exist = this.cartProducts.find((item:any)=>item.id==productData.id)
+      if (exist){
+        alert("this item alrady exist in your cart")
+      }
+      else
+      {
+        this.cartProducts.push(productData);
+        localStorage.setItem("cart",JSON.stringify(this.cartProducts))
+        this._SharedService.setSharedData(this.cartProducts)            //send data to navbar cartIcon
 
     }
-    localStorage.setItem("cart",JSON.stringify(productData))
+    }
+    else{
+      this.cartProducts.push(productData);
+      localStorage.setItem("cart",JSON.stringify(this.cartProducts))
+      this._SharedService.setSharedData(this.cartProducts)              //send data to navbar cartIcon
+
+    }
+
   }
+
+  incrment(productID:number){
+    let indexToUpdate = this.allProducts.findIndex((e:any)=>{
+    return e.id==productID
+    })
+
+    if(indexToUpdate!=-1){
+      this.allProducts[indexToUpdate].quantity++
+    }
+  }
+
+  decriment(productID:any){
+    let indexToUpdate = this.allProducts.findIndex((e:any)=>{
+      return e.id==productID
+      })
+
+      if(indexToUpdate!=-1){
+        this.allProducts[indexToUpdate].quantity--
+      }}
 }

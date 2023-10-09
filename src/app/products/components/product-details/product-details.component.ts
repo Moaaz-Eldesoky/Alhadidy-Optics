@@ -66,10 +66,10 @@ export class ProductDetailsComponent implements OnInit {
   }
 
   ngOnInit(){
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     this.id=this._ActivatedRoute.snapshot.params['id'];
     this._ProductsService.getProductDetails(this.id).subscribe(
       (res)=>{
-        console.log(res)
         this.productDetails = res;
       },
       (err)=>{

@@ -2,22 +2,29 @@
 
 <div class="container mt-5">
   <div class="all-products" *ngIf="!spinner">
-    <div class="row " >
+    <div class="row ">
       <div *ngFor="let product of allProducts" class="col-3 mb-3">
-        <div class="card" style="width: 18rem;" [routerLink]="['/product-details',product.id]" >
-          <img [src]="product.image" [ngClass]="{'img-fluid': true, 'custom-image-class': true}" class="card-img-top" alt="...">
-          <div class="card-body ">
-            <h5 class="card-title">{{product.title| truncateDescription:18}}</h5>
-            <p class="card-text">{{product.description| truncateDescription:90}}</p>
+        <div class="card" style="width: 18rem;">
+          <div class="card-details" [routerLink]="['/product-details',product.id]">
+            <img [src]="product.image" [ngClass]="{'img-fluid': true, 'custom-image-class': true}" class="card-img-top"
+              alt="...">
+            <div class="card-body ">
+              <h5 class="card-title">{{product.title| truncateDescription:18}} <span>{{product.price}}$</span></h5>
+              <p class="card-text">{{product.description| truncateDescription:90}} <a class="read-more" *ngIf="product.description.length > 100">Read More</a></p>
+            </div>
+          </div>
+          <div class="buttons">
             <a class="btn btn-primary" (click)="addToCart(product)">Add To Cart</a>
-            <a class="btn btn-secondary ms-3" *ngIf="product.description.length > 100">Read More</a>
+            <div class="quantity">
+              <div class="plus" (click)="incrment(product.id)">+</div>
+              <div class="num"><input type="text" [value]="product.quantity"></div>
+              <div class="minus" (click)="decriment(product.id)">-</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <div class="spinner-section" *ngIf="spinner">
+      <app-spinner></app-spinner>
+    </div>
   </div>
-  <div class="spinner-section" *ngIf="spinner">
-    <app-spinner></app-spinner>
-  </div>
-</div>
-

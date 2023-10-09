@@ -17,7 +17,6 @@ export class HeaderComponent {
     this._ProductsService.getAllProducts().subscribe(
       (res: any) => {
         this.products = res;
-        console.log("Eslam"+JSON.stringify(this.products));
       },
       (err: any) => {
         console.log(err);

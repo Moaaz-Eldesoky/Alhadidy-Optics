@@ -17,7 +17,6 @@ export class SunGlassesComponent {
         this.spinner = true;
         this.catProducts = data;
         this.spinner=false
-        console.log("sunGlasses"+JSON.stringify(data))
       },
       (err)=>{
         this.spinner=false;

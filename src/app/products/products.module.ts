@@ -8,8 +8,11 @@ import { EyeGlassesComponent } from './components/eye-glasses/eye-glasses.compon
 import { SunGlassesComponent } from './components/sun-glasses/sun-glasses.component';
 import { TruncateDescriptionPipe } from '../truncate-description.pipe';
 
+
 import { SharedModule } from '../shared/shared.module';
 import { RouterLink } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { SharedService } from '../shared/services/shared.service';
 
 
 
@@ -26,13 +29,15 @@ import { RouterLink } from '@angular/router';
     EyeGlassesComponent,
     SunGlassesComponent,
     TruncateDescriptionPipe,
-
   ],
   imports: [
     CommonModule,
     SharedModule,
-    RouterLink
-
+    RouterLink,
+    FormsModule
+  ],
+  providers:[
+    SharedService
   ]
 })
 export class ProductsModule { }

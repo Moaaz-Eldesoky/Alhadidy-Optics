@@ -17,7 +17,6 @@ export class EyeGlassesComponent {
         this.spinner = true;
         this.catProducts = data;
         this.spinner=false
-        console.log("moaaz"+JSON.stringify(data))
       },
       (err)=>{
         this.spinner=false;

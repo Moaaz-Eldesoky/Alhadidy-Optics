@@ -5,12 +5,14 @@ import { EyeGlassesComponent } from './products/components/eye-glasses/eye-glass
 import { SunGlassesComponent } from './products/components/sun-glasses/sun-glasses.component';
 import { ProductDetailsComponent } from './products/components/product-details/product-details.component';
 import { SpinnerComponent } from './shared/components/spinner/spinner.component';
+import { CartComponent } from './carts/components/cart/cart.component';
 
 const routes: Routes = [
   {path:'home' , component:AllProductsComponent},
   {path:'product-details/:id' ,component:ProductDetailsComponent},
   {path:'eye-glasses',component:EyeGlassesComponent},
   {path:'sun-glasses',component:SunGlassesComponent},
+  {path:'cart',component:CartComponent},
   // {path:'spinner',component:SpinnerComponent},
   {path:'**',redirectTo:'home',pathMatch:'full'}
 ];
