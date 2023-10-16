@@ -34,7 +34,10 @@ import { SharedService } from '../shared/services/shared.service';
     CommonModule,
     SharedModule,
     RouterLink,
-    FormsModule
+    FormsModule,
+  ],
+  exports:[
+    TruncateDescriptionPipe
   ],
   providers:[
     SharedService

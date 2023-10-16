@@ -2,18 +2,21 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CartComponent } from './components/cart/cart.component';
 import { SharedService } from '../shared/services/shared.service';
-
+import {ProductsModule } from '../products/products.module';
 
 
 @NgModule({
   declarations: [
-    CartComponent
+    CartComponent,
+
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ProductsModule
   ],
   providers:[
-    SharedService
+    SharedService,
+
   ]
 })
 export class CartsModule { }

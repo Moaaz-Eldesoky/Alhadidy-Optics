@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from './shared/shared.module';
 import { ProductsModule } from './products/products.module';
-import { OwlModule } from 'ngx-owl-carousel';
+import { CartsModule } from './carts/carts.module';
+import { AuthModule } from './authentication/auth.module';
+
 
 
 
@@ -16,14 +18,16 @@ import { OwlModule } from 'ngx-owl-carousel';
 @NgModule({
   declarations: [
     AppComponent,
-
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SharedModule,
+    CartsModule,
     ProductsModule,
+    AuthModule,
     HttpClientModule,
+    BrowserAnimationsModule,
     ],
   providers: [],
   bootstrap: [AppComponent]

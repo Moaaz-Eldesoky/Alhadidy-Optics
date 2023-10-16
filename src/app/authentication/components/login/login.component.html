@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="form-area">
+    <h3 class="sign">Sign in</h3>
+    <form class="form1" (submit)="onSubmit()">
+      <input class="email" type="text" placeholder="Email" [(ngModel)]="email" required>
+      <input class="pass" type="password" placeholder="Password" [(ngModel)]="password">
+      <a class="submit">Sign in</a>
+    </form>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../../services/shared.service';
 
 
@@ -7,11 +7,16 @@ import { SharedService } from '../../services/shared.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
   cartItems:[]=[];
   constructor(private _SharedService:SharedService){
+  }
+  ngOnInit(){
     this._SharedService.sharedData.subscribe(data => {
       this.cartItems = data;
     });
+
+    // this.cartItems = JSON.parse(localStorage.getItem("cart")!)
+    // console.log("cartItems:"+this.cartItems)
   }
 }
